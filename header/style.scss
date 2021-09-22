@@ -154,20 +154,21 @@ body{
         display:flex;
         flex-flow: column;
         padding:0 2rem;
-        margin:1rem 0;
+        margin:1rem 0 2.5rem 0;
         li{
-            padding:1rem 0;
-        }
-        li:not(:last-child){
-            border-bottom:1px dotted rgba(255, 255, 255, 0.2);
+           padding:0;
+           margin:0;
         }
     }
     a{
-        color:#888888 !important;
+        color:rgba(255, 255, 255, 0.6) !important;
         font-size: 12px;
         line-height: 20px;
         text-decoration: none;
-        transition:color 0.1s linear;
+        transition:color 0.2s linear;
+        padding:1rem 0;
+        display:block;
+        border-bottom:1px dotted rgba(255, 255, 255, 0.2);
         &:hover{
             color:white !important;
         }
@@ -176,7 +177,79 @@ body{
 .reveal-mobile-menu{
     max-height:600px;
 }
-
+.mobile-menu-login-row{
+    .mobile-menu-login-default{
+        cursor:pointer;
+        display:flex;
+        justify-content: space-between;
+        color:rgba(255, 255, 255, 0.6) !important;
+        font-size: 12px;
+        line-height: 20px;
+        text-decoration: none;
+        padding:1rem 0;
+        transition:color 0.1s linear;
+        border-bottom:1px dotted rgba(255, 255, 255, 0.2);
+        &:hover{
+            color:white !important;
+        }
+    }
+   .chevron{
+       display:flex;
+       justify-content: center;
+       align-items: center;
+       transition:all 500ms;
+   }
+   .left-line{
+        height:2px;
+        width:11px;
+        background:#444444;
+        display:block;
+        transition:all 300ms;
+        transform: rotate(45deg);
+        position:relative
+    }
+    .right-line{
+        height:2px;
+        width:11px;
+        background:#444444;
+        display:block;
+        transition:all 300ms;
+        transform: rotate(-45deg);
+        position: relative;
+        right: 4px;
+    }
+    .rotate{
+        transform: rotate(-90deg);
+    }
+}
+.mobile-menu-login-options{
+    width:100%;
+    overflow: hidden;
+    max-height:0;
+    transition: all 750ms;
+    background:#1F1F1F;
+        ul{
+            display:flex;
+            flex-flow: column;
+            justify-content: flex-start;
+            padding:0;
+            margin:0;
+            li{
+                padding:0;
+                margin:0 1rem;
+            }
+            a{
+                display:block;
+                padding:1rem 0;
+                &:hover{
+                    color:white !important;
+                }
+            }
+        }
+    }
+.reveal-mobile-menu-login{
+    max-height:600px;
+}
 
 // Media Queries
 

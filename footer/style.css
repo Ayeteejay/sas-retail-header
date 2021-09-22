@@ -97,22 +97,6 @@ body {
 .social-navigation a:hover {
   color: #009ddc !important;
 }
-.social-navigation a i {
-  font-family: "Font Awesome 5 Brands";
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  font-size: 18px;
-  line-height: 1;
-  color: #777777 !important;
-  transition: color 0.2s linear;
-}
-.social-navigation a i:hover {
-  color: #009ddc !important;
-}
 
 @media (max-width: 767px) {
   .footer-navigation {
