@@ -1,7 +1,7 @@
-// body{
-//     padding:0;
-//     margin:0;
-// }
+body{
+    padding:0;
+    margin:0;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 @import "utilities";
@@ -13,7 +13,7 @@
 }
 .header-wrapper{
     font-family: 'Open Sans', sans-serif;
-    padding:0;
+    padding:0 ;
     margin:0;
     display:flex;
     justify-content: center;
@@ -61,6 +61,47 @@
         }
     }
 }
+.login-column{
+    .login-default{
+        color:#888888 !important;
+        font-size: 12px;
+        line-height: 20px;
+        text-decoration: none;
+        transition:color 0.1s linear;
+        &:hover{
+            color:#009ddc !important;
+        }
+    }
+    .login-options{
+        background:#1F1F1F;
+        display:none;
+        position:absolute;
+        right:5%;
+        ul{
+            display:flex;
+            flex-flow: column;
+            justify-content: flex-start;
+            padding:0;
+            margin:0;
+            li{
+                padding:0;
+                margin:0;
+            }
+            a{
+                display:block;
+                padding:1rem;
+                &:hover{
+                    background: #313233!important;
+                }
+            }
+        }
+    }
+    &:hover{
+        .login-options{
+            display:block;
+        }
+    }
+}
 .mobile-column{
     display:none;
     padding:0 1rem 0 0;
@@ -102,19 +143,23 @@
 }
 .mobile-menu{
     width:100%;
-    // visibility: hidden;
+    overflow: hidden;
     max-height:0;
-    transition: all 500ms;
-    background-color:#1F1F1F;
-    opacity:0;
+    transition: all 1000ms;
+    background:#1F1F1F;
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.2); 
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.2);
     ul{
         list-style: none;
         display:flex;
         flex-flow: column;
         padding:0 2rem;
+        margin:1rem 0;
         li{
             padding:1rem 0;
-            border-bottom:1px dotted gray
+        }
+        li:not(:last-child){
+            border-bottom:1px dotted rgba(255, 255, 255, 0.2);
         }
     }
     a{
@@ -124,14 +169,12 @@
         text-decoration: none;
         transition:color 0.1s linear;
         &:hover{
-            color:#009ddc !important;
+            color:white !important;
         }
     }
 }
 .reveal-mobile-menu{
-    max-height:50vh;
-    // visibility: visible;
-    opacity:1;
+    max-height:600px;
 }
 
 
@@ -140,6 +183,9 @@
 @include respond-below(lg){
     .logo{
         max-width:40%;
+    }
+    .logo-column{
+        padding:0 0 0 1rem;
     }
     .link-column{
         display: none;

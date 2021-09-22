@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .logo {
   max-width: 50%;
   height: auto;
@@ -53,6 +58,44 @@
   padding: 0 0.75rem;
 }
 
+.login-column .login-default {
+  color: #888888 !important;
+  font-size: 12px;
+  line-height: 20px;
+  text-decoration: none;
+  transition: color 0.1s linear;
+}
+.login-column .login-default:hover {
+  color: #009ddc !important;
+}
+.login-column .login-options {
+  background: #1F1F1F;
+  display: none;
+  position: absolute;
+  right: 5%;
+}
+.login-column .login-options ul {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+.login-column .login-options ul li {
+  padding: 0;
+  margin: 0;
+}
+.login-column .login-options ul a {
+  display: block;
+  padding: 1rem;
+}
+.login-column .login-options ul a:hover {
+  background: #313233 !important;
+}
+.login-column:hover .login-options {
+  display: block;
+}
+
 .mobile-column {
   display: none;
   padding: 0 1rem 0 0;
@@ -95,20 +138,25 @@
 
 .mobile-menu {
   width: 100%;
+  overflow: hidden;
   max-height: 0;
-  transition: all 500ms;
-  background-color: #1F1F1F;
-  opacity: 0;
+  transition: all 1000ms;
+  background: #1F1F1F;
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
 }
 .mobile-menu ul {
   list-style: none;
   display: flex;
   flex-flow: column;
   padding: 0 2rem;
+  margin: 1rem 0;
 }
 .mobile-menu ul li {
   padding: 1rem 0;
-  border-bottom: 1px dotted gray;
+}
+.mobile-menu ul li:not(:last-child) {
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
 }
 .mobile-menu a {
   color: #888888 !important;
@@ -118,17 +166,20 @@
   transition: color 0.1s linear;
 }
 .mobile-menu a:hover {
-  color: #009ddc !important;
+  color: white !important;
 }
 
 .reveal-mobile-menu {
-  max-height: 50vh;
-  opacity: 1;
+  max-height: 600px;
 }
 
 @media (max-width: 991px) {
   .logo {
     max-width: 40%;
+  }
+
+  .logo-column {
+    padding: 0 0 0 1rem;
   }
 
   .link-column {
