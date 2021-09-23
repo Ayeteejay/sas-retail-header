@@ -4,7 +4,7 @@ body {
   margin: 0;
 }
 
-.logo {
+.header-logo {
   max-width: 50%;
   height: auto;
 }
@@ -31,7 +31,7 @@ body {
   align-items: center;
   padding: 1rem 0;
   margin: 0;
-  width: 80%;
+  width: 85%;
 }
 
 .toggle-white-background {
@@ -248,13 +248,18 @@ body {
   max-height: 600px;
 }
 
+@media (max-width: 575px) {
+  .header-logo {
+    max-width: 35%;
+  }
+}
 @media (max-width: 991px) {
-  .logo {
+  .header-logo {
     max-width: 40%;
   }
 
   .logo-column {
-    padding: 0 0 0 1rem;
+    padding: 0;
   }
 
   .link-column {
@@ -273,7 +278,7 @@ body {
 @media (min-width: 992px) and (max-width: 1199px) {
   .header-navigation {
     padding: 0.75rem 0rem;
-    width: 95%;
+    width: 97%;
   }
 }
 

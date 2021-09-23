@@ -4,8 +4,8 @@ body {
   margin: 0;
 }
 
-.logo {
-  max-width: 50%;
+.footer-logo {
+  max-width: 80%;
   height: auto;
 }
 
@@ -97,8 +97,28 @@ body {
 .social-navigation a:hover {
   color: #009ddc !important;
 }
+.social-navigation a i {
+  font-family: "Font Awesome 5 Brands";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-size: 18px;
+  line-height: 1;
+  color: #777777 !important;
+  transition: color 0.2s linear;
+}
+.social-navigation a i:hover {
+  color: #009ddc !important;
+}
 
 @media (max-width: 767px) {
+  .footer-logo {
+    max-width: 40%;
+  }
+
   .footer-navigation {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
@@ -112,8 +132,8 @@ body {
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .logo {
-    max-width: 40%;
+  .footer-logo {
+    max-width: 50%;
   }
 
   .footer-navigation {
@@ -134,6 +154,11 @@ body {
 
   .social-navigation {
     width: 95%;
+  }
+}
+@media (min-width: 1200px) {
+  .footer-logo {
+    max-width: 60%;
   }
 }
 
