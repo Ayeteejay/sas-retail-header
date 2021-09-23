@@ -22,36 +22,31 @@
             </div>
             <div class="link-column">
                 <ul>
-                    <li><a href="https://www.sasretail.com/search/" rel="noopener">Search All Jobs</a>
-                    </li>
-                    <li><a href="https://www.sasretail.com/about-us/" rel="noopener">About Us</a></li>
-                    <li><a href="https://www.sasretail.com/services/" rel="noopener">Services</a></li>
-                    <li><a href="https://www.sasretail.com/technology/" rel="noopener">Technology</a>
-                    </li>
-                    <li><a href="https://www.sasretail.com/employment/" rel="noopener">Employment</a>
-                    </li>
-                    <li><a href="https://www.sasretail.com/contact-us/" rel="noopener">Contact Us</a>
-                    </li>
+                    {% set node = menu(55751512356) %}
+                    {% for child in node.children %}
+                    {% if child.label == "Login" %}
                     <li>
                         <div class="login-column">
                             <span class="login-default">Login</span>
+
                             <div class="login-options">
                                 <ul>
-                                    <li><a href="https://prod.sasretail.com/" rel="noopener">Associate
-                                            Login</a>
-                                    </li>
-                                    <li><a href="https://analytics.daymon.com/" rel="noopener">Client
-                                            Login</a>
-                                    </li>
-                                    <li><a href="https://analytics.daymon.com/" rel="noopener">Manufacturers
-                                            / Suppliers
-                                            Login</a>
-                                    </li>
+                                    {% for subChild in child.children %}
+                                    <li><a href="{{subChild.url}}" rel="noopener">{{ subChild.label }}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
                     </li>
+
+                    {% else %}
+                    <li>
+                        <a href="{{child.url}}">{{ child.label }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
                 </ul>
+
             </div>
             <div class="mobile-column">
                 <span class="top-line"></span>
@@ -61,16 +56,9 @@
         </div>
         <div class="mobile-menu">
             <ul>
-                <li><a href="https://www.sasretail.com/search/" rel="noopener">Search All Jobs</a>
-                </li>
-                <li><a href="https://www.sasretail.com/about-us/" rel="noopener">About Us</a></li>
-                <li><a href="https://www.sasretail.com/services/" rel="noopener">Services</a></li>
-                <li><a href="https://www.sasretail.com/technology/" rel="noopener">Technology</a>
-                </li>
-                <li><a href="https://www.sasretail.com/employment/" rel="noopener">Employment</a>
-                </li>
-                <li><a href="https://www.sasretail.com/contact-us/" rel="noopener">Contact Us</a>
-                </li>
+                {% set node = menu(55751512356) %}
+                {% for child in node.children %}
+                {% if child.label == "Login" %}
                 <li>
                     <div class="mobile-menu-login-row">
                         <div class="mobile-menu-login-default">
@@ -82,20 +70,19 @@
                         </div>
                         <div class="mobile-menu-login-options">
                             <ul>
-                                <li><a href="https://prod.sasretail.com/" rel="noopener">Associate
-                                        Login</a>
-                                </li>
-                                <li><a href="https://analytics.daymon.com/" rel="noopener">Client
-                                        Login</a>
-                                </li>
-                                <li><a href="https://analytics.daymon.com/" rel="noopener">Manufacturers
-                                        / Suppliers
-                                        Login</a>
+                                <li>
+                                    {% for subChild in child.children %}
+                                    <a href="{{subChild.url}}" rel="noopener">{{ subChild.label }}</a>
+                                    {% endfor %}
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </li>
+                {% else %}
+                <li><a href="{{child.url}}" rel="noopener">{{ child.label }}</a></li>
+                {% endif %}
+                {% endfor %}
             </ul>
         </div>
     </div>

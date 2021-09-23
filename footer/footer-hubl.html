@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="footer-style.css">
+
+</head>
+
+<body>
+
+    <!-- Emulate the site container -->
+    <div style="display:flex;justify-content: center;">
+        <div style="width: 80%;max-width: 100% !important;">
+
+            <!-- Emulate height -->
+            <div style="width:100%">
+                <p style="font-size:1rem;background:lightblue;padding:0;margin:0;">Lorem ipsum dolor sit
+                    amet
+                    consectetur
+                    adipisicing elit.
+                    Corrupti ex eum quo
+                    labore architecto
+                    consequuntur? Illo similique autem inventore enim ipsa asperiores, corrupti
+                    minima placeat tempore
+                    doloribus nam magnam! repudiandae assumenda. Ducimus nemo vel eum voluptatibus
+                    itaque facilis
+                    quaerat.</p>
+            </div>
+        </div>
+    </div>
+    <!-- End emulation of site container -->
+
+
+
+
+
+
+    <footer class="footer-wrapper">
+        <div class="footer-navigation">
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <p><strong>SAS Retail Services<br>
+                        Worldwide Headquarters<br></strong>
+                    1575 N. Main Street<br>
+                    Orange, CA 92867<br>
+                    1-888-649-1075</p>
+                <p>Contact Us</p>
+                <a href="https://www.sasretail.com/" rel="noopener"><img class="footer-logo"
+                        src="https://blog.tng.com/hubfs/header-images/sas-logo-white.png" alt="SAS Retail logo" /></a>
+            </div>
+
+            {% set node = menu(55914617401) %}
+            {% for child in node.children %}
+            <div class="footer-column">
+                <h4>{{child.label}}</h4>
+                <ul>
+                    {% for subChild in child.children %}
+                    <li><a href="{{subChild.url}}" rel="noopener">{{ subChild.label }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="social-wrapper">
+            <div class="social-navigation">
+                <p>&#169; {{year}}, SAS Retail Services, Inc. All rights reserved. | <a
+                        href="https://www.sasretail.com/privacy-policy/" rel="noopener">Privacy
+                        Policy</a>
+                </p>
+                <a target="_blank" href="https://www.facebook.com/SASRetailServices/" rel="noopener"><i
+                        class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
